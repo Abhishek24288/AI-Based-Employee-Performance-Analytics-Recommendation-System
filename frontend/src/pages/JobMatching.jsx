@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Cpu, Search, Sparkles, CheckCircle2, XCircle, AlertCircle } from 'lucide-react';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://ai-based-employee-performance-analytics-72ye.onrender.com/api';
+
 const JobMatching = () => {
   const [requiredInput, setRequiredInput] = useState('');
   const [preferredInput, setPreferredInput] = useState('');
@@ -50,7 +52,7 @@ const JobMatching = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post('https://ai-based-employee-performance-analytics-72ye.onrender.com/api/match', {
+      const response = await axios.post(`${API_BASE_URL}/match`, {
         requiredSkills,
         preferredSkills,
         minExperience

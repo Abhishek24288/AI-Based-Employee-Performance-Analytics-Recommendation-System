@@ -6,6 +6,9 @@ import AddEmployee from './pages/AddEmployee';
 import EmployeeList from './pages/EmployeeList';
 import EmployeeDetails from './pages/EmployeeDetails';
 import AIRecommendations from './pages/AIRecommendations';
+import CandidateList from './pages/CandidateList';
+import AddCandidate from './pages/AddCandidate';
+import JobMatching from './pages/JobMatching';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Unauthorized from './pages/Unauthorized';
@@ -14,14 +17,16 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 import { AuthProvider } from './context/AuthContext';
 import { EmployeeProvider } from './context/EmployeeContext';
+import { CandidateProvider } from './context/CandidateContext';
 import { AIProvider } from './context/AIContext';
 
 function App() {
   return (
     <AuthProvider>
       <EmployeeProvider>
-        <AIProvider>
-          <Router>
+        <CandidateProvider>
+          <AIProvider>
+            <Router>
             <Routes>
               {/* Public Routes */}
               <Route path="/login" element={<Login />} />
@@ -79,13 +84,44 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              <Route
+                path="/candidates"
+                element={
+                  <ProtectedRoute allowedRoles={['hr']}>
+                    <Layout>
+                      <CandidateList />
+                    </Layout>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/add-candidate"
+                element={
+                  <ProtectedRoute allowedRoles={['hr']}>
+                    <Layout>
+                      <AddCandidate />
+                    </Layout>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/job-matching"
+                element={
+                  <ProtectedRoute allowedRoles={['hr']}>
+                    <Layout>
+                      <JobMatching />
+                    </Layout>
+                  </ProtectedRoute>
+                }
+              />
 
               {/* 404 Fallback */}
               <Route path="/404" element={<NotFound />} />
               <Route path="*" element={<Navigate to="/404" replace />} />
             </Routes>
-          </Router>
-        </AIProvider>
+            </Router>
+          </AIProvider>
+        </CandidateProvider>
       </EmployeeProvider>
     </AuthProvider>
   );

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, UserPlus, Users, Sparkles, BrainCircuit } from 'lucide-react';
+import { LayoutDashboard, UserPlus, Users, Sparkles, BrainCircuit, Briefcase, UserCheck } from 'lucide-react';
 import { AuthContext } from '../context/AuthContext';
 
 const Sidebar = () => {
@@ -10,6 +10,9 @@ const Sidebar = () => {
     { name: 'Dashboard', path: '/', icon: LayoutDashboard, roles: ['hr', 'employee'] },
     { name: 'Personnel Directory', path: '/employees', icon: Users, roles: ['hr'] },
     { name: 'Onboard Staff', path: '/add-employee', icon: UserPlus, roles: ['hr'] },
+    { name: 'Talent Pool', path: '/candidates', icon: UserCheck, roles: ['hr'] },
+    { name: 'Register Candidate', path: '/add-candidate', icon: UserPlus, roles: ['hr'] },
+    { name: 'Skill Matcher', path: '/job-matching', icon: BrainCircuit, roles: ['hr'] },
     { name: 'AI recommendations', path: '/ai-recommendations', icon: Sparkles, roles: ['hr'] },
   ];
 
