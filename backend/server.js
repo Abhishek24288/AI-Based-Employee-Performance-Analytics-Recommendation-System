@@ -22,6 +22,22 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.get('/', (req, res) => {
+  res.status(200).json({
+    status: 'online',
+    message: 'Welcome to the Guruji AI Performance Analytics & Recommendation System API Terminal',
+    version: '1.0.0',
+    database: mongoose.connection.readyState === 1 ? 'Connected (MongoDB Atlas)' : 'Local Fallback Filesystem',
+    documentation: 'https://github.com/Abhishek24288/AI-Based-Employee-Performance-Analytics-Recommendation-System',
+    endpoints: {
+      auth: '/api/auth/login',
+      employees: '/api/employees',
+      recommendations: '/api/ai/recommend',
+      chatbot: '/api/ai/chat'
+    }
+  });
+});
+
 app.use('/api', routes);
 
 // Database Connection
