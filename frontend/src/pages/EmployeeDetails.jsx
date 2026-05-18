@@ -477,7 +477,7 @@ const EmployeeDetails = () => {
                     value={performanceScore}
                     disabled={user.role !== 'hr'}
                     onChange={e => setPerformanceScore(Number(e.target.value))}
-                    className="w-full h-2 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-brand-500 focus:outline-none mt-2 disabled:opacity-50"
+                    className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-500 focus:outline-none mt-2 disabled:opacity-50"
                   />
                 </div>
               </div>

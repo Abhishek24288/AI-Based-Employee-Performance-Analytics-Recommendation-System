@@ -121,7 +121,7 @@ const EmployeeList = () => {
             max="15"
             value={minExp}
             onChange={(e) => setMinExp(Number(e.target.value))}
-            className="w-full h-2 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-brand-500 focus:outline-none mt-2"
+            className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-500 focus:outline-none mt-2"
           />
         </div>
 
@@ -137,7 +137,7 @@ const EmployeeList = () => {
             max="100"
             value={minScore}
             onChange={(e) => setMinScore(Number(e.target.value))}
-            className="w-full h-2 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-brand-500 focus:outline-none mt-2"
+            className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-500 focus:outline-none mt-2"
           />
         </div>
 

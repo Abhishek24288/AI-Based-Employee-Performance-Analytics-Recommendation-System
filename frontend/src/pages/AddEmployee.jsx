@@ -178,7 +178,7 @@ const AddEmployee = () => {
                 max="100"
                 value={performanceScore}
                 onChange={e => setPerformanceScore(Number(e.target.value))}
-                className="w-full h-2 bg-slate-955 rounded-lg appearance-none cursor-pointer accent-brand-500 focus:outline-none mt-2"
+                className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-500 focus:outline-none mt-2"
               />
             </div>
           </div>
@@ -254,7 +254,7 @@ const AddEmployee = () => {
                 max="100"
                 value={projectScore1}
                 onChange={e => setProjectScore1(Number(e.target.value))}
-                className="w-full h-2 bg-slate-955 rounded-lg appearance-none cursor-pointer accent-indigo-500 focus:outline-none mt-2"
+                className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-indigo-500 focus:outline-none mt-2"
               />
             </div>
           </div>
