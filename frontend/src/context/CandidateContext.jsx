@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const CandidateContext = createContext();
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://ai-based-employee-performance-analytics-72ye.onrender.com/api';
 
 export const CandidateProvider = ({ children }) => {
   const [candidates, setCandidates] = useState([]);

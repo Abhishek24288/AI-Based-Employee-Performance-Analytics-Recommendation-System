@@ -50,7 +50,7 @@ const JobMatching = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/match', {
+      const response = await axios.post('https://ai-based-employee-performance-analytics-72ye.onrender.com/api/match', {
         requiredSkills,
         preferredSkills,
         minExperience
